@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0b0b">
+
+    <title>A little smile, a lot of happiness. 😊💕</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 10px 6px calc(10px + env(safe-area-inset-bottom));
+            background: #0b0b0b;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .ad-banner {
+            width: 100%;
+            min-height: 70px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            background: #151515;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .player {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 6px;
+            background: #000;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: 0;
+            background: #000;
+            object-fit: contain;
+        }
+
+        video::-webkit-media-controls-fullscreen-button {
+            display: none !important;
+        }
+
+        .viral-button {
+            width: 100%;
+            min-height: 48px;
+            margin-top: 12px;
+            padding: 14px 12px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #ff1744, #ff5722);
+            box-shadow: 0 5px 20px rgba(255, 23, 68, 0.3);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .viral-button:active {
+            transform: scale(0.98);
+        }
+
+        @media (min-width: 601px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .ad-banner {
+                min-height: 90px;
+                margin-bottom: 12px;
+                border-radius: 8px;
+            }
+
+            .player {
+                border-radius: 10px;
+            }
+
+            .viral-button {
+                max-width: 900px;
+                margin: 14px auto 0;
+                padding: 16px 20px;
+                font-size: 18px;
+            }
+
+            .viral-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(255, 23, 68, 0.45);
+            }
+        }
+
+        @media (orientation: landscape) and (max-height: 500px) {
+            body {
+                padding: 6px;
+            }
+
+            .ad-banner {
+                display: none;
+            }
+
+            .player {
+                max-height: calc(100vh - 66px);
+                margin: 0 auto;
+                aspect-ratio: 16 / 9;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="video-container">
+        <div class="ad-banner" aria-label="Advertisement"></div>
+
+        <div class="player">
+            <video
+                controls
+                playsinline
+                preload="metadata"
+                controlsList="nodownload noplaybackrate"
+                disablePictureInPicture
+                oncontextmenu="return false"
+            >
+                <source src="https://cdn2.videy.co/DQQlWX3V1.mp4" type="video/mp4">
+                Browser Anda tidak mendukung video HTML5.
+            </video>
+        </div>
+
+        <a
+            class="viral-button"
+            href="https://t.co/iLqjFN3LgI"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            🔥 VIRAL TODAY — CLICK HERE
+        </a>
+    </main>
+
+    <script>
+        const video = document.querySelector("video");
+
+        video.addEventListener("contextmenu", (event) => {
+            event.preventDefault();
+        });
+    </script>
+
+    <!-- Histats.com START (async) -->
+    <script type="text/javascript">
+        var _Hasync = _Hasync || [];
+        _Hasync.push(["Histats.start", "1,5036646,4,0,0,0,00010000"]);
+        _Hasync.push(["Histats.fasi", "1"]);
+        _Hasync.push(["Histats.track_hits", ""]);
+
+        (function () {
+            var hs = document.createElement("script");
+            hs.type = "text/javascript";
+            hs.async = true;
+            hs.src = "//s10.histats.com/js15_as.js";
+            document.head.appendChild(hs);
+        })();
+    </script>
+
+    <noscript>
+        <a href="/" target="_blank">
+            <img
+                src="//sstatic1.histats.com/0.gif?5036646&amp;101"
+                alt="free web stats"
+                border="0"
+            >
+        </a>
+    </noscript>
+    <!-- Histats.com END -->
+</body>
+</html>
