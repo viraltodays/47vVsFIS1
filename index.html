@@ -1,202 +1,377 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#0b0b0b">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>A little smile, a lot of happiness. 😊💕</title>
+<title>A little smile, a lot of happiness. 😊💕</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            min-height: 100vh;
-            margin: 0;
-            padding: 10px 6px calc(10px + env(safe-area-inset-bottom));
-            background: #0b0b0b;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #0b0b0b;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
 
-        .video-container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+/* =========================
+   CONTAINER UTAMA
+========================= */
 
-        .ad-banner {
-            width: 100%;
-            min-height: 70px;
-            margin-bottom: 10px;
-            border-radius: 6px;
-            background: #151515;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+.video-container {
+    width: 100%;
+    height: 100dvh;
+    max-width: 900px;
+    margin: 0 auto;
 
-        .player {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-            border-radius: 6px;
-            background: #000;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-        }
+    display: flex;
+    flex-direction: column;
 
-        video {
-            width: 100%;
-            height: 100%;
-            display: block;
-            border: 0;
-            background: #000;
-            object-fit: contain;
-        }
+    padding: 6px;
+}
 
-        video::-webkit-media-controls-fullscreen-button {
-            display: none !important;
-        }
+/* =========================
+   BANNER ADSTERRA
+========================= */
 
-        .viral-button {
-            width: 100%;
-            min-height: 48px;
-            margin-top: 12px;
-            padding: 14px 12px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #ff1744, #ff5722);
-            box-shadow: 0 5px 20px rgba(255, 23, 68, 0.3);
+.ad-banner {
+    width: 100%;
+    height: 70px;
+    min-height: 70px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    margin-bottom: 6px;
 
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
+    background: #151515;
 
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            -webkit-tap-highlight-color: transparent;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        .viral-button:active {
-            transform: scale(0.98);
-        }
+    overflow: hidden;
+    border-radius: 5px;
+}
 
-        @media (min-width: 601px) {
-            body {
-                padding: 20px 10px;
-            }
+/* =========================
+   VIDEO PLAYER
+========================= */
 
-            .ad-banner {
-                min-height: 90px;
-                margin-bottom: 12px;
-                border-radius: 8px;
-            }
+.player {
+    position: relative;
 
-            .player {
-                border-radius: 10px;
-            }
+    width: 100%;
 
-            .viral-button {
-                max-width: 900px;
-                margin: 14px auto 0;
-                padding: 16px 20px;
-                font-size: 18px;
-            }
+    /*
+     * Video mengambil ruang yang tersedia
+     * agar CTA tetap terlihat.
+     */
+    flex: 1;
 
-            .viral-button:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(255, 23, 68, 0.45);
-            }
-        }
+    min-height: 0;
 
-        @media (orientation: landscape) and (max-height: 500px) {
-            body {
-                padding: 6px;
-            }
+    background: #000;
 
-            .ad-banner {
-                display: none;
-            }
+    border-radius: 6px;
+    overflow: hidden;
 
-            .player {
-                max-height: calc(100vh - 66px);
-                margin: 0 auto;
-                aspect-ratio: 16 / 9;
-            }
-        }
-    </style>
+    box-shadow: 0 5px 25px rgba(0,0,0,.5);
+}
+
+video {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    background: #000;
+}
+
+/* Hilangkan fullscreen native */
+video::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.viral-button {
+    display: flex;
+
+    width: 100%;
+
+    height: 54px;
+    min-height: 54px;
+
+    margin-top: 6px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 12px;
+
+    background: linear-gradient(
+        135deg,
+        #ff1744,
+        #ff5722
+    );
+
+    color: white;
+
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    letter-spacing: .4px;
+
+    border-radius: 7px;
+
+    box-shadow:
+        0 5px 20px rgba(255, 23, 68, .3);
+
+    flex-shrink: 0;
+
+    transition: .2s ease;
+}
+
+.viral-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(255, 23, 68, .45);
+}
+
+.viral-button:active {
+    transform: scale(.98);
+}
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media(max-width:600px) {
+
+    .video-container {
+        padding: 4px;
+    }
+
+    .ad-banner {
+        height: 60px;
+        min-height: 60px;
+        margin-bottom: 4px;
+    }
+
+    .player {
+        border-radius: 5px;
+    }
+
+    .viral-button {
+        height: 50px;
+        min-height: 50px;
+
+        margin-top: 4px;
+
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   HP SANGAT PENDEK
+   Contoh: 667px atau kurang
+========================= */
+
+@media(max-height:700px) and (max-width:600px) {
+
+    .video-container {
+        padding: 3px;
+    }
+
+    .ad-banner {
+        height: 45px;
+        min-height: 45px;
+        margin-bottom: 3px;
+    }
+
+    .viral-button {
+        height: 46px;
+        min-height: 46px;
+
+        margin-top: 3px;
+
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   HP SANGAT PENDEK
+========================= */
+
+@media(max-height:600px) and (max-width:600px) {
+
+    .ad-banner {
+        height: 35px;
+        min-height: 35px;
+    }
+
+    .viral-button {
+        height: 42px;
+        min-height: 42px;
+
+        font-size: 13px;
+    }
+}
+</style>
 </head>
 
 <body>
-    <main class="video-container">
-        <div class="ad-banner" aria-label="Advertisement"></div>
 
-        <div class="player">
-            <video
-                controls
-                playsinline
-                preload="metadata"
-                controlsList="nodownload noplaybackrate"
-                disablePictureInPicture
-                oncontextmenu="return false"
-            >
-                <source src="https://cdn2.videy.co/DQQlWX3V1.mp4" type="video/mp4">
-                Browser Anda tidak mendukung video HTML5.
-            </video>
-        </div>
+<div class="video-container">
 
-        <a
-            class="viral-button"
-            href="https://t.co/iLqjFN3LgI"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            🔥 VIRAL TODAY — CLICK HERE
-        </a>
-    </main>
+    <!-- ==================================
+         BANNER ADSTERRA
+         TEMPEL SCRIPT ADSTERRA DI SINI
+    =================================== -->
 
-    <script>
-        const video = document.querySelector("video");
+    <div class="ad-banner">
 
-        video.addEventListener("contextmenu", (event) => {
-            event.preventDefault();
-        });
-    </script>
+        <!-- SCRIPT ADSTERRA -->
 
-    <!-- Histats.com START (async) -->
-    <script type="text/javascript">
-        var _Hasync = _Hasync || [];
-        _Hasync.push(["Histats.start", "1,5036646,4,0,0,0,00010000"]);
-        _Hasync.push(["Histats.fasi", "1"]);
-        _Hasync.push(["Histats.track_hits", ""]);
+    </div>
 
-        (function () {
-            var hs = document.createElement("script");
-            hs.type = "text/javascript";
-            hs.async = true;
-            hs.src = "//s10.histats.com/js15_as.js";
-            document.head.appendChild(hs);
-        })();
-    </script>
 
-    <noscript>
-        <a href="/" target="_blank">
-            <img
-                src="//sstatic1.histats.com/0.gif?5036646&amp;101"
-                alt="free web stats"
-                border="0"
-            >
-        </a>
-    </noscript>
-    <!-- Histats.com END -->
+    <!-- ==================================
+         VIDEO PLAYER
+    =================================== -->
+
+    <div class="player">
+
+        <video
+            controls
+            playsinline
+            preload="metadata"
+            controlsList="nodownload noplaybackrate"
+            disablePictureInPicture
+            oncontextmenu="return false;">
+
+            <source
+                src="https://cdn2.videy.co/DQQlWX3V1.mp4"
+                type="video/mp4">
+
+            Browser Anda tidak mendukung video HTML5.
+
+        </video>
+
+    </div>
+
+
+    <!-- ==================================
+         VIRAL TODAY CTA
+    =================================== -->
+
+    <a
+        class="viral-button"
+        href="https://t.co/iLqjFN3LgI"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        🔥 VIRAL TODAY — CLICK HERE
+
+    </a>
+
+</div>
+
+
+<script>
+
+const video = document.querySelector("video");
+
+/*
+ * Mencegah menu klik kanan
+ * pada video.
+ */
+
+video.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+});
+
+
+/*
+ * Mencegah beberapa shortcut
+ * fullscreen dari halaman.
+ */
+
+document.addEventListener("keydown", function(e) {
+
+    if (e.key === "F11") {
+        e.preventDefault();
+    }
+
+});
+
+</script>
+
+
+<!-- ==================================
+     HISTATS
+================================== -->
+
+<script type="text/javascript">
+
+var _Hasync = _Hasync || [];
+
+_Hasync.push([
+    'Histats.start',
+    '1,5036646,4,0,0,0,00010000'
+]);
+
+_Hasync.push([
+    'Histats.fasi',
+    '1'
+]);
+
+_Hasync.push([
+    'Histats.track_hits',
+    ''
+]);
+
+(function() {
+
+    var hs = document.createElement('script');
+
+    hs.type = 'text/javascript';
+    hs.async = true;
+
+    hs.src = '//s10.histats.com/js15_as.js';
+
+    (
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+    ).appendChild(hs);
+
+})();
+
+</script>
+
+<noscript>
+    <a href="/" target="_blank">
+        <img
+            src="//sstatic1.histats.com/0.gif?5036646&101"
+            alt="free web stats"
+            border="0">
+    </a>
+</noscript>
+
 </body>
 </html>
